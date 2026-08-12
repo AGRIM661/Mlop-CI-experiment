@@ -19,11 +19,6 @@ def train_model():
 
     predictions = model.predict(X_test)
 
-    return accuracy_score(y_test, predictions)
+    accuracy = accuracy_score(y_test, predictions)
 
-
-def main():
-    accuracy = train_model()
-    print("Model Accuracy:", accuracy)
-    
-main()
+    return accuracy

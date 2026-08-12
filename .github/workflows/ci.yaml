@@ -1,4 +1,4 @@
-name: CI WorkFlow
+name: ML CI
 
 on:
   push:
@@ -15,19 +15,17 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
-          pip install scikit-learn pytest
+          pip install -r requirements.txt
 
       - name: Run tests
         run: |
           pytest
-
-
